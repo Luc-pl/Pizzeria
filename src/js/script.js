@@ -62,7 +62,8 @@
       thisProduct.renderInMenu();
 
       console.log('new Product:', thisProduct);
-    },
+    }
+
     renderInMenu(){
       const thisProduct = this;
 
@@ -73,7 +74,7 @@
       thisProduct.element = utils.createDOMFromHTML(generatedHTML);
 
       /* find menu container */
-      const menuContainer = document.querySelector(selct.containerOf.menu);
+      const menuContainer = document.querySelector(select.containerOf.menu);
 
       /* add element to menu */
       menuContainer.appendChild(thisProduct.element);
