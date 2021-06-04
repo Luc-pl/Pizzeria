@@ -223,16 +223,17 @@
       thisWidget.linkIncrease = thisWidget.element.querySelector(select.widgets.amount.linkIncrease);
     }
 
-    setValue(value){
+    /*setValue(value){
       const thisWidget = this;
 
       const newValue = perseInt(value);
 
-      /* TODO: Add validation */
+      /* TODO: Add validation /
 
       thisWidget.value = newValue;
       thisWidget.input.value = thisWidget.value;
     }
+    */
   }
 
   const app = {
