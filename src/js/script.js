@@ -378,7 +378,7 @@
 
       thisCart.dom.wrapper = element;
       thisCart.dom.toggleTrigger = element.querySelector(select.cart.toggleTrigger);
-      thisCart.dom.price.productList = element.querySelector(select.cart.productList);
+      thisCart.dom.productList = thisCart.dom.wrapper.querySelector(select.cart.productList);
     }
 
     initActions(){
@@ -392,8 +392,8 @@
     add(menuProduct){
       const thisCart = this;
 
-      const generatedHTML=templates.cartProduct(menuProduct);
-      const generatedDOM=utils.createDOMFromHTML(generatedHTML);
+      const generatedHTML = templates.cartProduct(menuProduct);
+      const generatedDOM = utils.createDOMFromHTML(generatedHTML);
 
       thisCart.dom.productList.appendChild(generatedDOM);
 
