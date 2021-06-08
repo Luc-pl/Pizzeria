@@ -439,7 +439,7 @@
       
       
       thisCart.dom.totalNumber.innerHTML = thisCart.totalNumber;
-      thisCart.dom.subTotalPrice.innerHTML = thisCart.subTotalPrice;    
+      //thisCart.dom.subTotalPrice.innerHTML = thisCart.subTotalPrice;    
             
     }
   }
