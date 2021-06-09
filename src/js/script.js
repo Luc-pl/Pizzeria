@@ -76,6 +76,11 @@
     cart: {
       defaultDeliveryFee: 20,
     },
+    db: {
+      url: '//localhost:3131',
+      products: 'products',
+      orders: 'orders',
+    },
     // CODE ADDED END
   };
 
@@ -538,8 +543,22 @@
     },
     initData: function(){
       const thisApp = this;
+      thisApp.data = {};
+      const url = settings.db.url + '/' + settings.db.products;
 
-      thisApp.data = dataSource;
+      fetch(url) //Połącz się z adresem url przy użyciu metody fetch
+        .then(function(rawResponse){ 
+          return rawResponse.json(); // Jeśli połączenie się zakończy, to wtedy (pierwsze .then) skonwertuj dane do obiektu JS-owego.
+        })
+        .then(function(parsedResponse){ // Kiedy i ta operacja się zakończy, to wtedy (drugie .then) pokaż w konsoli te skonwertowane dane.
+          console.log('parsedResponse',parsedResponse);
+
+          //save parsedResponse as thisApp.data.products
+          thisApp.data.products=parsedResponse;
+          //execute initMenu method
+          thisApp.initMenu();
+        });
+      console.log('thisApp.data',JSON.stringify(thisApp.data));
     },
 
     init: function(){
