@@ -535,7 +535,7 @@
       const thisApp = this;
 
       for(let productData in thisApp.data.products){
-        new Product(productData, thisApp.data.products[productData]);
+        new Product(thisApp.data.products[productData].id, thisApp.data.products[productData]);
       }
       // Zastąpione powyższym 
       /*const testProduct = new Product();
