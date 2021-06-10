@@ -438,17 +438,14 @@
       } else {
         thisCart.totalPrice = thisCart.subTotalPrice + thisCart.deliveryFee;
 
-        thisCart.dom.deliveryFee.innerHTML = settings.cart.defaultDeliveryFee;
-
         for(let price of thisCart.dom.totalPrice){
           price.innerHTML = thisCart.totalPrice;
         }
       }
       
-      
       thisCart.dom.totalNumber.innerHTML = thisCart.totalNumber;
-      thisCart.dom.subTotalPrice.innerHTML = thisCart.subTotalPrice;    
-            
+      thisCart.dom.subTotalPrice.innerHTML = thisCart.subTotalPrice;   
+      thisCart.dom.deliveryFee.innerHTML = thisCart.deliveryFee;            
     }
 
     remove(cartProduct){
