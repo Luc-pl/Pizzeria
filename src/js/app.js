@@ -1,4 +1,4 @@
-import {settings, select, classNames, templates} from './settings.js';
+import {settings, select} from './settings.js';
 import Product from './components/Product.js';
 import Cart from './components/Cart.js';
 
@@ -23,24 +23,17 @@ const app = {
         return rawResponse.json(); // Jeśli połączenie się zakończy, to wtedy (pierwsze .then) skonwertuj dane do obiektu JS-owego.
       })
       .then(function(parsedResponse){ // Kiedy i ta operacja się zakończy, to wtedy (drugie .then) pokaż w konsoli te skonwertowane dane.
-        console.log('parsedResponse',parsedResponse);
 
         //save parsedResponse as thisApp.data.products
-        thisApp.data.products=parsedResponse;
+        thisApp.data.products = parsedResponse;
         //execute initMenu method
         thisApp.initMenu();
       });
-    console.log('thisApp.data',JSON.stringify(thisApp.data));
   },
 
   init: function(){
     const thisApp = this;
-    console.log('*** App starting ***');
-    console.log('thisApp:', thisApp);
-    console.log('classNames:', classNames);
-    console.log('settings:', settings);
-    console.log('templates:', templates);
-
+ 
     thisApp.initData();
     thisApp.initMenu();
   },

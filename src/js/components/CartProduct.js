@@ -1,5 +1,5 @@
 import { select } from '../settings.js';
-import AmountWidget from '../components/AmountWidget.js';
+import AmountWidget from './AmountWidget.js';
 
 class CartProduct{
   constructor(menuProduct, element){
@@ -62,7 +62,6 @@ class CartProduct{
     });
 
     thisCartProduct.dom.wrapper.dispatchEvent(event);
-    console.log('remove');
   }
 
   getData() {
