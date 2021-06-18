@@ -9,6 +9,7 @@ class Booking {
 
     thisBooking.render(element);
     thisBooking.initWidgets();
+    thisBooking.getData();
   }
 
   render(element){
