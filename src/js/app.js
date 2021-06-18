@@ -6,7 +6,7 @@ const app = {
   initPages: function(){
     const thisApp = this;
     thisApp.pages = document.querySelector(select.containerOf.pages).children;
-    thisApp.navLinks = document.querySelectorAll(select.nav.links).children;
+    thisApp.navLinks = document.querySelectorAll(select.nav.links);
 
     thisApp.activatePage(thisApp.pages[0].id);
   },
@@ -60,6 +60,7 @@ const app = {
  
     thisApp.initData();
     thisApp.initMenu();
+    thisApp.initPages();
   },
 
   initCart: function(){
@@ -72,8 +73,6 @@ const app = {
     thisApp.productList.addEventListener('add-to-cart', function(event){
       app.cart.add(event.detail.product);
     });
-
-    thisApp.initPages();
   },
   
 };
