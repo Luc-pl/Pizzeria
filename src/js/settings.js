@@ -93,6 +93,10 @@ export const classNames = {
 };
 
 export const settings = {
+  hours: {
+    open: 12,
+    close: 24,
+  },
   amountWidget: {
     defaultValue: 1,
     defaultMin: 1,

@@ -1,7 +1,7 @@
 import { templates, select } from '../settings.js';
-import AmountWidget from '../components/AmountWidget.js';
-import DatePicker from '../components/DatePicker.js';
-import HourPicker from '../components/HourPicker.js';
+import AmountWidget from './AmountWidget.js';
+import DatePicker from './DatePicker.js';
+import HourPicker from './HourPicker.js';
 
 class Booking {
   constructor(element){
@@ -9,8 +9,15 @@ class Booking {
 
     thisBooking.render(element);
     thisBooking.initWidgets();
-    thisBooking.getData();
+    //thisBooking.getData();
+
   }
+
+  /*getData(){
+    const thisBooking = this;
+
+
+  }*/
 
   render(element){
     const thisBooking = this;
@@ -35,12 +42,14 @@ class Booking {
     thisBooking.datePicker = new DatePicker(thisBooking.dom.datePicker);
     thisBooking.hourPicker = new HourPicker(thisBooking.dom.hourPicker);
     
-    thisBooking.dom.peopleAmount.addEventListener('updated', function(){
-
+    thisBooking.dom.wrapper.addEventListener('updated', function () {
+      thisBooking.updateDOM();
     });
-    thisBooking.dom.hoursAmount.addEventListener('updated', function(){
 
-    });
+    /*thisBooking.dom.form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      thisBooking.sendBooking();
+    });*/
   }
 
 
