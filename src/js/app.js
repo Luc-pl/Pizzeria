@@ -110,6 +110,7 @@ export const app = {
     thisApp.initData();
     thisApp.initMenu();
     thisApp.initBooking();
+    thisApp.initPages();
   },
 
   initCart: function(){
