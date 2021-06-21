@@ -6,7 +6,7 @@
   border-radius: $radius;
 }
 
-/* Options - section */
+/*** Options - section ***/
 
 .options {
   display: flex;
@@ -17,14 +17,14 @@
 }
 
 .order-online, .book-table, .opening-hours {
-  text-align: center;
+  
   color: $color-light;
   margin-top: 15px;
   margin-right: 15px;
   border-radius: 3px;
 
   h2 {
-    margin: 20px 0 10px;
+    margin: 40px;
   }
 
   a {
@@ -40,68 +40,139 @@
 
 .order-online {
   background-image: url("./../../images/assets/pizza-1.jpg");
+  width: 300px;
+  height: 121px;
   flex: 45%;
 }
 
 .book-table {
   background-image: url("./../../images/assets/pizza-2.jpg");
+  width: 300px;
+  height: 121px;
   flex: 45%;
 }
 
 .opening-hours {
   background-color: $color-main;
   flex: 100%;
+  height: 120px;
+
+  h2, h3{
+    margin: 20px;
+  }
 }
 
 .order-online:hover, .book-table:hover {
   p {
     visibility: visible;
-    transform: translateY(-10px);
+    transform: translateY(-40px);
     transition: 0.5s linear;
   }
 
   h2 {
-    transform: translateY(-15px);
+    transform: translateY(-30px);
     transition: 0.5s linear;
   }
 }
 
-// *** carousel ***
+/*** carousel ***/
+
+.main-carousel {
+  margin-top: 20px;
+}
 
 .carousel-cell {
   width: 100%;
   height: 160px;
   margin-top: 20px;
+}
 
-  .content {
-    display: inline-flex;
-  }
+.carousel-content {
+  display: inline-flex;
+}
   
-  .carousel-image img {
-    border-radius: 3px;
-    object-fit: cover;
-    width: 250px;
-    height: 250px;
-    margin-right: 50px;
-  }
+.carousel-image img {
+  border-radius: 3px;
+  width: 250px;
 }
 
 .carousel-post {
   h3 {
-    font-weight: $font-bold;
-    text-transform: uppercase;
-    font-family: $font-text;
+    margin-bottom: -10px;
   }
 
-  p:nth-child(2) {
+  p {
     font-size: 14px;
     font-weight: $font-light;
-    text-align: justify;
     font-family: $font-text;
   }
-  
-  p:nth-child(3) {
-    font-style: italic;
-    font-size: 16px;
+}
+
+/* Gallery */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+  margin-top: 60px;
+
+  .box {
+    position: relative;
+    flex: 33%;
+  }
+
+  img {
+    height: 180px;
+    width: 180px;
+    object-fit: cover;
+    border-radius: 3px;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    color: $color-light;
+    display: inline;
+    visibility: hidden;
+
+    a {
+      text-decoration: none;
+      color: $color-light;
+      text-decoration: none;
+      display: inline;
+      size: 10px;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    
+  }
+
+  .box:hover {
+    img {
+      opacity: 0.5;
+      transition: all 0.3s;
+    }
+
+    li {
+      visibility: visible;
+      margin-right: 5px;
+
+      .fa-heart {
+        color: $color-main;
+        margin: 0 2px;
+      }
+
+      .fa-share-alt {
+        color: $color-light;
+        margin: 0 2px;
+      }
+    }
   }
 }

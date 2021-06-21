@@ -26,6 +26,8 @@ class Cart {
     thisCart.dom.totalPrice = element.querySelectorAll(select.cart.totalPrice);
     thisCart.dom.totalNumber = element.querySelector(select.cart.totalNumber);
     thisCart.dom.form = element.querySelector(select.cart.form);
+    thisCart.dom.address = thisCart.dom.wrapper.querySelector(select.cart.address);
+    thisCart.dom.phone = thisCart.dom.wrapper.querySelector(select.cart.phone);
   }
 
   initActions(){
@@ -42,7 +44,7 @@ class Cart {
     });
     thisCart.dom.form.addEventListener('submit', function(event){
       event.preventDefault();
-      thisCart.sendOrder();
+      //thisCart.sendOrder();
     });
   }
 
@@ -93,11 +95,11 @@ class Cart {
 
     const thisCart = this;
   
-    const url = settings.db.url + '/' + settings.db.orders;
+    const url = settings.db.url + '/' + settings.db.order;
 
     const payload = {
-      address: thisCart.dom.address,
-      phone: thisCart.dom.phone,
+      address: thisCart.dom.address.value,
+      phone: thisCart.dom.phone.value,
       totalPrice: thisCart.totalPrice,
       subtotalPrice: thisCart.subtotalPrice,
       totalNumber: thisCart.totalNumber,

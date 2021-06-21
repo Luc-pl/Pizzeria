@@ -26,7 +26,7 @@ class Home {
   initWidgets() {
     const thisHome = this;
 
-    thisHome.element = document.querySelector(select.widgets.carousel);
+    thisHome.element = document.querySelector('.main-carousel');
     thisHome.flkty = new Flickity(thisHome.element, {
       cellAlign: 'left',
       contain: true,
