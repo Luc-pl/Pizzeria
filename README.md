@@ -1,1 +1,1 @@
-https://git.heroku.com/pizzeria-mam.git
+https://pizzeria-mam.herokuapp.com/
