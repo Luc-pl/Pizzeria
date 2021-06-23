@@ -30,7 +30,7 @@ class Home {
     thisHome.flkty = new Flickity(thisHome.element, {
       cellAlign: 'left',
       contain: true,
-      autoPlay: true,
+      autoPlay: 3000,
       wrapAround: true,
       prevNextButtons: false,
     });
