@@ -26,14 +26,16 @@ class Home {
   initWidgets() {
     const thisHome = this;
 
-    thisHome.element = document.querySelector('.main-carousel');
-    thisHome.flkty = new Flickity(thisHome.element, {
-      cellAlign: 'left',
-      contain: true,
-      autoPlay: 3000,
-      wrapAround: true,
-      prevNextButtons: false,
-    });
+    setTimeout(() => {
+      thisHome.element = document.querySelector('.main-carousel');
+      thisHome.flkty = new Flickity(thisHome.element, {
+        prevNextButtons: false,
+        wrapAround: true,
+        autoPlay: 3000,
+        cellAlign: 'left',
+        contain: true,
+      });
+    }, 2000);
   }
 
   goToPage() {
